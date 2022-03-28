@@ -1,5 +1,6 @@
-.App {
+ .App {
   text-align: center;
+  width: 1500px;
 }
 
 .App-logo {
@@ -35,4 +36,28 @@
   to {
     transform: rotate(360deg);
   }
+} 
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.primary {
+  width: 1500px;
+  overflow: hidden;
+}
+
+.full-page {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(rgba(192, 192, 211, 0.9), rgba(206, 206, 224, 0.8), rgba(130, 130, 177, 0.85));
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+
 }
