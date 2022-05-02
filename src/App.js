@@ -1,7 +1,8 @@
 
 import React from 'react'
 import Navigation from './Components/Navigation';
-// import Body from './Components/Body';
+import 'bootstrap/dist/css/bootstrap.min.css'
+// import Form from './Components/Modal/Form';
 
 
 
@@ -12,9 +13,9 @@ function App() {
   return (
     <>
       <div className='full-page'>
-        <Navigation></Navigation>
+        <Navigation/>
+        
       </div>
-      {/* <Body></Body> */}
     </>
   );
 }

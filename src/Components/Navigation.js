@@ -1,32 +1,35 @@
-import React, {useState} from 'react'
-import Body from './Body';
-import Button from './Button'
-import List from './List'
-import './NavigationStyles.scss'
+import React from 'react'
+import Navbar from 'react-bootstrap/Navbar'
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+import LoginModal from './Modal/LoginModal';
 
-
-
-function Navigation(props) {
-const [isLogginOpen, setIsLogginOpen] = useState(false);
- 
-const toggleModal = () => {
-  setIsLogginOpen(!isLogginOpen)
-}
-
+function Navigation() {
   return (
-    <div className='navbar'>
-        <nav>
-            <ul id='MenuItems'>
-                <List name ='Home'></List>
-                <List name= 'About'></List>
-                <List name= 'Service'></List>
-                <List name= 'Contacts'></List>
-                <li>
-                <Button NameClass='loginbtn' name= 'Sign In' clickButton={() => toggleModal()}></Button>
-                {isLogginOpen ? <Body close ={toggleModal}></Body> : null}
-                </li>
-            </ul>
-        </nav>      
+    <div>
+      <Navbar bg="primary" color='white' expand="lg">
+  <Container>
+    <Navbar.Brand href="#logo" style={{
+      color: 'white',
+      fontWeight: '700',
+      fontSize: '30px'
+      }}>
+      TechShop
+    <i className='fa-solid fa-shop'></i>
+    </Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="ms-auto" >
+        <Nav.Link href="#home" className='text-light'>Home</Nav.Link>
+        <Nav.Link href="#link" className='text-light'>About</Nav.Link>
+        <Nav.Link href='#Services'className='text-light'>Services</Nav.Link>
+        <Nav.Link href='#Contacts' className='text-light'>Contacts</Nav.Link>
+
+      </Nav>      
+    </Navbar.Collapse>
+    <LoginModal/>
+  </Container>
+</Navbar>
     </div>
   )
 }
